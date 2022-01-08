@@ -3,9 +3,7 @@ package controller;
 
 import javafx.event.ActionEvent;
 
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 
@@ -28,6 +26,7 @@ public class mainFormController {
     public MenuItem btnPaste;
     public MenuItem btnCut;
     public Menu btnHelp;
+    public MenuBar mnBar;
 
     public void initialize(){
 
@@ -116,5 +115,32 @@ public class mainFormController {
     }
 
     public void btnhelpClickOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnImageNewClickOnAction(ActionEvent actionEvent) {
+        new Alert(Alert.AlertType.CONFIRMATION, "Do you want open a new Window").show();
+        
+
+//        mnBar.getMenus().get(0).getItems().get(0).fire();
+        mnNew.fire();
+    }
+
+    public void btnImageOpenClickOnAction(ActionEvent actionEvent) {
+
+    }
+
+    public void btnImageSaveClickOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnImageExitClickOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnImageCopyClickOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnImagePasteClickOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnImageClickOnAction(ActionEvent actionEvent) {
     }
 }

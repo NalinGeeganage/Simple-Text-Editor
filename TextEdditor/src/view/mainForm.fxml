@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="440.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainFormController">
+    <children>
+        <MenuBar prefHeight="26.0" prefWidth="190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="411.0" AnchorPane.topAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem fx:id="mnNew" mnemonicParsing="false" onAction="#mnNewClickOnAction" text="New" />
+                        <MenuItem fx:id="mnItemOpen" mnemonicParsing="false" onAction="#mnItemOpenOnAction" text="open" />
+                        <MenuItem fx:id="mnIItemSave" mnemonicParsing="false" onAction="#mnItemSaveClickOnAction" text="save" />
+                        <MenuItem mnemonicParsing="false" text="print" />
+                        <MenuItem fx:id="mnExit" mnemonicParsing="false" onAction="#mnExitClockOnAction" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem fx:id="btnSelectAll" mnemonicParsing="false" onAction="#btnSelectAllClickOnActions" text="SelectAll" />
+                        <MenuItem fx:id="btnCopy" mnemonicParsing="false" onAction="#btnCopyClickOnAction" text="Copy" />
+                        <MenuItem fx:id="btnPaste" mnemonicParsing="false" onAction="#btnPasteClickOnAction" text="Paste" />
+                        <MenuItem fx:id="btnCut" mnemonicParsing="false" onAction="#btnCutClickOnAction" text="Cut" />
+                    </items>
+                </Menu>
+                <Menu fx:id="btnHelp" mnemonicParsing="false" onAction="#btnhelpClickOnAction" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Separator layoutY="28.0" prefHeight="0.0" prefWidth="601.0" />
+        <Separator layoutY="77.0" prefHeight="3.0" prefWidth="601.0" />
+        <TextArea fx:id="txtArea" layoutX="14.0" layoutY="83.0" prefHeight="311.0" prefWidth="577.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="83.0" />
+        <ToolBar layoutX="-1.0" layoutY="31.0" prefHeight="29.0" prefWidth="383.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="219.0" AnchorPane.topAnchor="31.0">
+            <items>
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="26.0" text="Button" />
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="35.0" text="Button" />
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="39.0" text="Button" />
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="33.0" text="Button" />
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="32.0" text="Button" />
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="Button" />
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="35.0" text="Button" />
+                <Button mnemonicParsing="false" prefHeight="26.0" prefWidth="38.0" text="Button" />
+            </items>
+        </ToolBar>
+    </children>
+</AnchorPane>

@@ -1,9 +1,12 @@
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
+import java.awt.*;
 import java.io.IOException;
 
 public class AppInitializer extends Application {
@@ -20,6 +23,11 @@ public class AppInitializer extends Application {
         primaryStage.setTitle("Simple Text Editor");
         primaryStage.fullScreenProperty();
         primaryStage.show();
+
+
+
+
+
 
 
     }

@@ -3,12 +3,17 @@ package controller;
 
 import javafx.event.ActionEvent;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.*;
 import java.util.Optional;
 import java.util.regex.Matcher;
@@ -37,14 +42,25 @@ public class mainFormController {
     public TextField txtWordCount;
     public TextField txtFindCount;
     public Button btnDown;
+    public Label lblWordCount;
 
     private Matcher matcher;
     private Matcher matcher1;
     public boolean textChanged;
+    public int findCount = 0;
+    public int matcherCount = 0;
+    public int[] textFind;
+    int upCount = -1;
+
+    public AnchorPane mainFormContext;
+
+    public static int downCount = 0;
 
 
     public void initialize(){
         txtWordCount.setDisable(true);
+        lblWordCount.setDisable(true);
+        txtFindCount.setDisable(true);
         txtArea.textProperty().addListener((observable, oldValue, newValue) -> setTextTitle());
         txtArea.textProperty().addListener((observable, oldValue, newValue) -> getWordCount());
 
@@ -180,29 +196,63 @@ public class mainFormController {
         btnCut.fire();
     }
 
+
     public void btnDownClickOnAction(ActionEvent actionEvent) {
+        downCount++;
         txtArea.deselect();
         String text = txtFind.getText();
 
+
         if (textChanged){
+            downCount =0;
 
             int flag =0;
             if (!btnRegEx.isSelected()){flag = flag | Pattern.LITERAL;}
             if (!btnCaseSensitive.isSelected()){flag = flag | Pattern.CASE_INSENSITIVE;}
-            matcher = Pattern.compile("^"+ text + "$" ,flag).matcher(txtArea.getText());
+            matcher = Pattern.compile(text ,flag).matcher(txtArea.getText());
             textChanged = false;
+            findCount = getFindCount(matcher);
+
         }
         if (matcher.find()){
-            txtArea.selectRange(matcher.start(), matcher.end());
-        }else{
+//            txtArea.selectRange(matcher.start(), matcher.end());
+            textFind = new int[findCount*2];
+            textFind[matcherCount] = matcher.start();
+            textFind[matcherCount+1] = matcher.end();
+            System.out.println(matcher.start() + "," + matcher.end());
+            matcherCount = matcherCount + 2;
+            System.out.println(downCount);
+            if (downCount != findCount){
+                txtArea.selectRange(textFind[downCount*2-2],textFind[downCount*2-1] );
+            }
+            else {
+                txtArea.selectRange(textFind[downCount*2-2],textFind[downCount*2-1] );
+                downCount = 0;
+            }
+        } else {
             matcher.reset();
+            txtFindCount.setText(downCount + "/" + findCount);
         }
+        if (downCount==findCount){
+            downCount =-1;
+
+        }
+
     }
     public void btnUpClickonAction(ActionEvent actionEvent) {
+        System.out.println(downCount);
+
+        txtArea.selectRange(textFind[downCount*2-2],textFind[downCount*2-1]);
+        downCount = downCount - 1;
 
     }
 
     public void btnReplaceClickOnAction(ActionEvent actionEvent) {
+
+        if (matcher.find()){
+            txtArea.replaceText(matcher.start(),matcher.end(),txtReplace.getText());
+
+        }
     }
 
     public void btnRegEx(ActionEvent actionEvent) {
@@ -217,6 +267,7 @@ public class mainFormController {
 
     }
     public void getWordCount(){
+        lblWordCount.setDisable(false);
         txtWordCount.setDisable(false);
         matcher1 = Pattern.compile("\\S+",0).matcher(txtArea.getText());
         int count =0;
@@ -226,4 +277,28 @@ public class mainFormController {
         }
         txtWordCount.setText(String.valueOf(count));
     }
+    public int getFindCount(Matcher matcher2){
+        txtFindCount.setDisable(false);
+        int countF = 0;
+        while (matcher2.find()) {
+            countF++;
+        }
+        return countF;
+
+    }
+
+    public void btnHelpClickOnAction(ActionEvent actionEvent) throws IOException {
+//        Stage stage = (Stage) mainFormContext.getScene().getWindow();
+//        stage.setScene(new Scene(FXMLLoader
+//                .load(getClass().getResource("/view/AboutForm.fxml"))));
+
+        AnchorPane pane =FXMLLoader.load(getClass().getResource("../view/AboutForm.fxml"));
+        Scene scene =new Scene(pane);
+        Stage stage =new Stage();
+        stage.setScene(scene);
+        stage.setResizable(false);
+        stage.show();
+
+    }
+
 }

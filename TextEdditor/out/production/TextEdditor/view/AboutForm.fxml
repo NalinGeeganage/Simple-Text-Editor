@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="501.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AboutFormController">
+   <children>
+      <ImageView fitHeight="129.0" fitWidth="98.0" layoutX="202.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/note.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="194.0" layoutY="14.0" text="About Us">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="191.0" layoutY="163.0" text="Simple Text Editor" />
+      <Label layoutX="77.0" layoutY="200.0" text="A Simple Texxt Editor diveloped by Nalin Geeganage " />
+      <Label layoutX="150.0" layoutY="222.0" text="Licence Under the MIT License." />
+      <Label layoutX="98.0" layoutY="244.0" text="For more details please refere the README file" />
+      <Label layoutX="107.0" layoutY="295.0" text="Copyright ©  2021-present NalinGeeganage" />
+      <Label layoutX="187.0" layoutY="319.0" text="All Rights Reserved" />
+   </children>
+</AnchorPane>

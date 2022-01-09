@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="440.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainFormController">
     <children>
-        <MenuBar fx:id="mnBar" prefHeight="26.0" prefWidth="190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="411.0" AnchorPane.topAnchor="0.0">
+        <MenuBar fx:id="mnBar" prefHeight="26.0" prefWidth="190.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
             <menus>
                 <Menu mnemonicParsing="false" text="File">
                     <items>
@@ -35,9 +35,9 @@
                         <MenuItem fx:id="btnCut" mnemonicParsing="false" onAction="#btnCutClickOnAction" text="Cut" />
                     </items>
                 </Menu>
-                <Menu fx:id="btnHelp" mnemonicParsing="false" onAction="#btnhelpClickOnAction" text="Help">
+                <Menu mnemonicParsing="false" text="Help">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
+                        <MenuItem fx:id="btnHelp2" mnemonicParsing="false" onAction="#btnHelpClickOnAction" text="About" />
                     </items>
                 </Menu>
             </menus>
@@ -45,7 +45,7 @@
         <Separator layoutY="28.0" prefHeight="0.0" prefWidth="601.0" />
         <Separator layoutY="82.0" prefHeight="3.0" prefWidth="601.0" />
         <TextArea fx:id="txtArea" layoutX="12.0" layoutY="88.0" prefHeight="311.0" prefWidth="577.0" AnchorPane.bottomAnchor="41.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="12.0" AnchorPane.topAnchor="88.0" />
-        <ToolBar layoutX="-1.0" layoutY="31.0" prefHeight="40.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="265.0" AnchorPane.topAnchor="31.0">
+        <ToolBar layoutX="-1.0" layoutY="31.0" prefHeight="40.0" prefWidth="336.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="31.0">
             <items>
                 <Button fx:id="btnImageNew" mnemonicParsing="false" onAction="#btnImageNewClickOnAction" prefHeight="26.0" prefWidth="26.0">
                <graphic>
@@ -106,7 +106,7 @@
                </graphic></Button>
             </items>
         </ToolBar>
-      <Label layoutX="441.0" layoutY="410.0" text="Word Count :" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="74.0" />
+      <Label fx:id="lblWordCount" layoutX="441.0" layoutY="410.0" text="Word Count :" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="74.0" />
       <TextField fx:id="txtWordCount" layoutX="527.0" layoutY="405.0" prefHeight="26.0" prefWidth="64.0" AnchorPane.bottomAnchor="9.0" AnchorPane.rightAnchor="10.0" />
       <TextField fx:id="txtFindCount" layoutX="14.0" layoutY="405.0" prefHeight="26.0" prefWidth="77.0" AnchorPane.bottomAnchor="9.0" AnchorPane.leftAnchor="14.0" />
       <Button fx:id="btnDown" layoutX="461.0" layoutY="29.0" mnemonicParsing="false" onAction="#btnDownClickOnAction" prefHeight="26.0" prefWidth="35.0" AnchorPane.rightAnchor="105.0" AnchorPane.topAnchor="29.0">
@@ -125,8 +125,8 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TextField fx:id="txtFind" layoutX="336.0" layoutY="28.0" prefHeight="26.0" prefWidth="86.0" promptText="Find" />
-      <TextField fx:id="txtReplace" layoutX="336.0" layoutY="55.0" prefHeight="26.0" prefWidth="86.0" promptText="Replace" />
+      <TextField fx:id="txtFind" layoutX="336.0" layoutY="28.0" prefHeight="26.0" prefWidth="86.0" promptText="Find" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="28.0" />
+      <TextField fx:id="txtReplace" layoutX="336.0" layoutY="55.0" prefHeight="26.0" prefWidth="86.0" promptText="Replace" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="55.0" />
       <Button fx:id="btnReplace" layoutX="422.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnReplaceClickOnAction" prefHeight="26.0" prefWidth="77.0" text="Replace" AnchorPane.rightAnchor="102.0" AnchorPane.topAnchor="55.0" />
       <ToggleButton fx:id="btnRegEx" layoutX="499.0" layoutY="29.0" mnemonicParsing="false" onAction="#btnRegEx" prefHeight="26.0" prefWidth="110.0" text="RegEx" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="29.0" />
       <ToggleButton fx:id="btnCaseSensitive" layoutX="491.0" layoutY="55.0" mnemonicParsing="false" onAction="#btnCaseSensitiveClickOnAction" text="CaseSensitive" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0" />

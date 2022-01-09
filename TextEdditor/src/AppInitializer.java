@@ -20,7 +20,7 @@ public class AppInitializer extends Application {
         AnchorPane pane = FXMLLoader.load(getClass().getResource("view/mainForm.fxml"));
         Scene scene = new Scene(pane);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Simple Text Editor");
+        primaryStage.setTitle("Simple Text Editor -Untitled");
         primaryStage.fullScreenProperty();
         primaryStage.show();
 

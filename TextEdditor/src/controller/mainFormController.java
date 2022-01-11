@@ -106,15 +106,10 @@ public class mainFormController {
         fos.close();
     }
 
-    public void mnExitClockOnAction(ActionEvent actionEvent) {
-
-        System.exit(0);
+    public void mnExitClockOnAction(ActionEvent actionEvent) {System.exit(0);
     }
 
-    public void btnSelectAllClickOnActions(ActionEvent actionEvent) {
-        txtArea.selectAll();
-
-
+    public void btnSelectAllClickOnActions(ActionEvent actionEvent) {txtArea.selectAll();
     }
 
     public void btnCopyClickOnAction(ActionEvent actionEvent) {
